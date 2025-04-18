@@ -38,7 +38,7 @@ const RelationshipS2B2 = () => {
                Phương thức tác động trở lại
             </p>
 
-            <p className="text-2xl leading-snug font-bold text-black" style={{ fontFamily: 'var(--font-secondary)' }}>
+            <p className="text-xl leading-snug font-bold text-black" style={{ fontFamily: 'var(--font-secondary)' }}>
                Tác động theo hai chiều hướng
             </p>
 
