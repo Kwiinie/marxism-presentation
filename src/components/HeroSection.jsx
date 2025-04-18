@@ -9,7 +9,7 @@ const HeroSection = () => {
          id: 1,
          chapter: "Phần 1",
          period: "Khái niệm",
-         targetId: "period-1",
+         targetId: "definition-section", // Updated to match section className
          images: [
             "/definition1.jpg",
             "/definition2.jpg",
@@ -21,7 +21,7 @@ const HeroSection = () => {
          id: 2,
          chapter: "Phần 2",
          period: "Quy luật về mối quan hệ biện chứng",
-         targetId: "period-2",
+         targetId: "relationship-section", // Updated to match section className
          images: [
             "/relationship1.jpg",
          ],
@@ -31,7 +31,7 @@ const HeroSection = () => {
          id: 3,
          chapter: "Phần 3",
          period: "Ý nghĩa trong đời sống xã hội",
-         targetId: "period-3",
+         targetId: "meaning-section", // Updated to match section className
          images: [
             "/methodology.jpg",
          ],
@@ -41,7 +41,7 @@ const HeroSection = () => {
          id: 4,
          chapter: "Phần 4",
          period: "Trả lời CQ",
-         targetId: "period-4",
+         targetId: "cq-section", // Updated to match section className
          images: [
             "/CQ.jpg"
          ],
@@ -51,9 +51,15 @@ const HeroSection = () => {
 
    const scrollToSection = (targetId, e) => {
       e.preventDefault();
-      const element = document.getElementById(targetId);
+      // Using querySelector instead of getElementById to target by class
+      const element = document.querySelector(`.${targetId}`);
       if (element) {
-         element.scrollIntoView({ behavior: 'smooth' });
+         // If you're using Lenis for smooth scrolling
+         if (window.lenis) {
+            window.lenis.scrollTo(element);
+         } else {
+            element.scrollIntoView({ behavior: 'smooth' });
+         }
       }
    };
 
@@ -95,12 +101,6 @@ const HeroSection = () => {
             <span className="word word-14">XÃ</span>{' '}
             <span className="word word-15">HỘI</span>{' '}
           </h1>
-
-          {/* <div className="hero-top-text">
-            <span className='font-bold'>I. Học thuyết hình thái kinh tế-xã hội</span>
-            <br />
-            <span className="pt-2">3. Biện chứng giữa cơ sở hạ tầng</span> và kiến trúc thượng tầng của xã hội
-          </div> */}
         </div>
       </div>
 
@@ -109,7 +109,6 @@ const HeroSection = () => {
           <a
             key={period.id}
             data-lenis-restart=""
-            data-target={`#${period.targetId}`}
             href="#"
             className={period.className}
             onClick={(e) => scrollToSection(period.targetId, e)}
@@ -137,7 +136,5 @@ const HeroSection = () => {
     </motion.section>
    );
 };
-
-
 
 export default HeroSection;

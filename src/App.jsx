@@ -8,6 +8,9 @@ import CQSection from './components/CQSection';
 import RelationshipSection from './components/RelationshipSection';
 import ScaleNormalizer from './components/ScaleNomilizer';
 import preventZoom from './components/PreventZoom';
+import MeaningSection from './components/MeaningSection';
+import CQFullSection from './components/CQFullSection';
+import EndSection from './components/EndSection';
 
 
 function App() {
@@ -33,11 +36,13 @@ function App() {
 
   return (
     <div className="app-container">
-      <HeroSection/>
-      <DefinitionSection/>
-      {/* <RelationshipSection/>
-      <CQSection/> */}
-    </div>
+    <HeroSection />
+    <DefinitionSection />
+    <RelationshipSection />
+    <MeaningSection />
+    <CQFullSection />
+    <EndSection />
+  </div>
   )
 }
 

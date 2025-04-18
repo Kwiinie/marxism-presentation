@@ -36,16 +36,17 @@ const Meaning = () => {
        </motion.p>
  
        {/* Main Text */}
-       <motion.h1
-         className="text-xl font-semibold leading-snug max-w-2/3"
+       <motion.p
+         className="text-2xl font-semibold leading-snug max-w-2/3"
          variants={wipeDownVariant}
          initial="hidden"
          animate="visible"
+         style={{ fontFamily: 'var(--font-primary)' }}
        >
          Kinh tế và chính trị có mối quan hệ biện chứng, tác động qua lại lẫn nhau<br />
          Chính trị là biểu hiện tập trung của kinh tế.<br />
          Tuyệt đối hóa một yếu tố (chỉ chú trọng kinh tế hoặc chính trị) là sai lầm
-       </motion.h1>
+       </motion.p>
  
        {/* Quote & Lenin */}
        {showQuote && (

@@ -289,6 +289,23 @@
   justify-content: center;
 }
 
+
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: #bc3f53;
+}
+
 .section-period {
   z-index: 4;
   background-color: var(--pink);

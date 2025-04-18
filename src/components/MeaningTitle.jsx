@@ -6,7 +6,7 @@ const MeaningTitle = () => {
   
     return (
       <div ref={ref} className={`section-period ${inView ? 'in-view' : ''}`}>
-        <div className="period-sub-text">Phần 4</div>
+        <div className="period-sub-text">Phần 3</div>
         <h2
           ref={ref}
           className={`period-main-text upd ${inView ? 'fade-up' : ''}`}
