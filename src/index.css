@@ -20,6 +20,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+html {
+  /* Prevent zoom on double tap for touch devices */
+  touch-action: manipulation !important;
+  -webkit-text-size-adjust: 100% !important;
+  -ms-text-size-adjust: 100% !important;
+}
 
 html, body {
   overflow: hidden;

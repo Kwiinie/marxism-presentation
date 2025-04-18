@@ -6,6 +6,8 @@ import Lenis from '@studio-freight/lenis';
 import DefinitionSection from './components/DefinitionSection';
 import CQSection from './components/CQSection';
 import RelationshipSection from './components/RelationshipSection';
+import ScaleNormalizer from './components/ScaleNomilizer';
+import preventZoom from './components/PreventZoom';
 
 
 function App() {
@@ -23,6 +25,11 @@ function App() {
 
     requestAnimationFrame(raf);
   }, []);
+
+  useEffect(() => {
+    preventZoom();
+  }, []);
+
 
   return (
     <div className="app-container">
