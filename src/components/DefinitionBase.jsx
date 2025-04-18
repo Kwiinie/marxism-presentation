@@ -12,7 +12,6 @@ const DefinitionBase = () => {
           className={`period-main-text upd ${inView ? 'fade-up' : ''}`}
         >
           <span className="word visible">
-asdjklfklasdjflkasdjflk
           </span>
         </h2>
         <div className="period-sub-text p1-bottom p1">
