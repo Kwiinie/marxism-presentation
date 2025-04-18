@@ -14,67 +14,76 @@ import RelationshipS2B from './RelationshipS2B'
 import RelationshipS2B1 from './RelationshipS2B1'
 import RelationshipS2B2 from './RelationshipS2B2'
 import CQQuestion from './CQQuestion'
+import MeaningTitle from './MeaningTitle'
+import Meaning from './Meaning'
 
 
 const DefinitionSection = () => {
-   const sectionRef = useRef(null);
-   const trackRef = useRef(null);
-   
-   gsap.registerPlugin(ScrollTrigger);
+  const sectionRef = useRef(null);
+  const trackRef = useRef(null);
+  const progressRef = useRef(null);
+  
+  gsap.registerPlugin(ScrollTrigger);
 
-   useEffect(() => {
-     const section = sectionRef.current;
-     const track = trackRef.current;
-     
-     // Calculate the scroll distance more reliably
-     const updateScrollTrigger = () => {
-       // Get the total width of all items in the track
-       const totalWidth = track.scrollWidth;
-       const viewportWidth = window.innerWidth;
-       
-       // The distance to scroll is the difference between total width and viewport width
-       const scrollDistance = totalWidth - viewportWidth;
-       
-       // Create the ScrollTrigger
-       const ctx = gsap.context(() => {
-         // Clear any existing ScrollTriggers to prevent duplicates
-         ScrollTrigger.getAll().forEach(st => st.kill());
-         
-         gsap.to(track, {
-           x: -scrollDistance,
-           ease: 'none',
-           scrollTrigger: {
-             trigger: section,
-             start: 'top top',
-             end: `+=${scrollDistance}px`,
-             scrub: true,
-             pin: true,
-             anticipatePin: 1,
-             invalidateOnRefresh: true,
-             markers: false,
-             id: 'definition-section-scroll'
-           }
-         });
-       }, section);
-       
-       return ctx;
-     };
-     
-     // Initial setup
-     const ctx = updateScrollTrigger();
-     
-     // Update on window resize
-     const handleResize = () => {
-       ScrollTrigger.refresh();
-     };
-     
-     window.addEventListener('resize', handleResize);
-     
-     return () => {
-       ctx.revert();
-       window.removeEventListener('resize', handleResize);
-     };
-   }, []);
+  useEffect(() => {
+    const section = sectionRef.current;
+    const track = trackRef.current;
+    const progressBar = progressRef.current;
+    
+    if (!section || !track) return;
+    
+    // Function to calculate the scroll amount dynamically
+    const getScrollAmount = () => {
+      // Get the total width of the content
+      const trackWidth = track.scrollWidth;
+      // Return negative value of (total width - viewport width)
+      return -(trackWidth - window.innerWidth);
+    };
+    
+    // Create the animation
+    const horizontalAnimation = gsap.to(track, {
+      x: getScrollAmount,
+      ease: "none",
+    });
+    
+    // Create the scroll trigger
+    const scrollTrigger = ScrollTrigger.create({
+      trigger: section,
+      start: "top top",
+      end: () => `+=${getScrollAmount() * -1}`,
+      pin: true,
+      animation: horizontalAnimation,
+      scrub: 1,
+      invalidateOnRefresh: true,
+      markers: false,
+      id: "definition-scroll",
+      onUpdate: (self) => {
+        // Update progress bar if it exists
+        if (progressBar) {
+          gsap.to(progressBar, {
+            width: `${self.progress * 100}%`,
+            duration: 0.1,
+            overwrite: true
+          });
+        }
+      }
+    });
+    
+    // Handle resize to ensure everything recalculates properly
+    const handleResize = () => {
+      // Recalculate ScrollTrigger values
+      ScrollTrigger.refresh();
+    };
+    
+    window.addEventListener("resize", handleResize);
+    
+    return () => {
+      // Clean up
+      if (scrollTrigger) scrollTrigger.kill();
+      if (horizontalAnimation) horizontalAnimation.kill();
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
    
    return (
      <section ref={sectionRef} className="definition-section horizontal-section">
@@ -91,6 +100,8 @@ const DefinitionSection = () => {
            <RelationshipS2B/>
            <RelationshipS2B1/>
            <RelationshipS2B2/>
+           <MeaningTitle/>
+           <Meaning/>
            <CQSection/>
            <CQQuestion/>
          </div>

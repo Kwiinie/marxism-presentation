@@ -16,17 +16,17 @@ const RelationshipS2B1 = () => {
       >
         <p className="text-lg text-gray-500 font-medium">Vì sao tác động?</p>
 
-        <p className="text-3xl sm:text-4xl text-white leading-tight tracking-tight font-semibold">
+        <p className="text-2xl text-white leading-tight tracking-tight font-semibold">
           Do tính độc lập tương đối của kiến trúc thượng tầng.
         </p>
-        <p className="text-2xl text-white font-light leading-tight tracking-tight">
+        <p className="text-xl text-white font-light leading-tight tracking-tight">
           Dù phản ánh CSHT, nhưng KTTT có quy luật vận động riêng, có thể thúc đẩy hoặc cản trở sự phát triển của CSHT.
         </p>
 
-        <p className="text-3xl sm:text-4xl text-white leading-tight tracking-tight font-semibold">
+        <p className="text-2xl text-white leading-tight tracking-tight font-semibold">
           Do vai trò và sức mạnh vật chất của bộ máy tổ chức – thể chế
         </p>
-        <p className="text-2xl text-white font-light leading-tight tracking-tight">
+        <p className="text-xl text-white font-light leading-tight tracking-tight">
           Nhà nước, pháp luật, chính trị là những bộ phận trung tâm của KTTT, có khả năng tổ chức và điều chỉnh toàn bộ đời sống xã hội.
         </p>
       </motion.div>
@@ -36,7 +36,7 @@ const RelationshipS2B1 = () => {
         ref={ref}
         animate={inView ? { scale: 1.05 } : { scale: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="absolute top-10 left-40 w-64 h-64 rounded-full overflow-hidden border-gray-700"
+        className="absolute top-10 left-40 w-40 h-40 rounded-full overflow-hidden border-gray-700"
       >
         <img
           src="anghen.jpg"
@@ -50,9 +50,9 @@ const RelationshipS2B1 = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
-        className="absolute left-[30rem] top-[10rem] -translate-y-1/2 w-1/2 text-left"
+        className="absolute left-[25rem] top-[8rem] -translate-y-1/2 w-1/2 text-left"
       >
-        <p className="text-2xl italic font-light text-gray-400 leading-snug">
+        <p className="text-xl italic font-light text-gray-400 leading-snug">
           “Quan điểm tư tưởng, đến lượt mình, nó tác động trở lại đến cơ sở hạ tầng kinh tế và có thể biến đổi nó trong giới hạn nhất định.”
         </p>
       </motion.div>
@@ -64,7 +64,7 @@ const RelationshipS2B1 = () => {
         transition={{ duration: 1, ease: 'easeOut' }}
         src="https://cdn.prod.website-files.com/667a818a880f892c0cfca58c/672cbe9e4b4768e7dbe38394_IMG_1581.GIF"
         alt="Bottom Right Decoration"
-        className="absolute bottom-80 right-20 w-50"
+        className="absolute bottom-80 right-20 w-40"
       />
 
       {/* Center GIF with soft zoom-in and fade */}

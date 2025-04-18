@@ -59,7 +59,7 @@ const RelationshipB2S = () => {
        </div>
  
        <div
-         className="absolute bottom-50 right-60 w-[600px] h-[300px] cursor-pointer"
+         className="absolute bottom-20 right-50 w-[500px] h-[300px] cursor-pointer"
          onClick={cycleNotes}
        >
          {order.map((noteIndex, i) => {
@@ -71,7 +71,7 @@ const RelationshipB2S = () => {
            return (
              <div
                key={note.id}
-               className="absolute w-full h-full bg-[#fdf5e6] border border-[#d6c8a6] rounded-sm shadow-lg text-black p-6 transition-all duration-500 ease-in-out"
+               className="absolute w-full h-full bg-[#f1eada] border border-[#d6c8a6] rounded-sm shadow-lg text-black p-6 transition-all duration-500 ease-in-out"
                style={{
                  zIndex: zIndex,
                  transform: `translate(${translate}px, ${translate}px) scale(${scale})`,
@@ -82,7 +82,7 @@ const RelationshipB2S = () => {
                  <span>{note.header}</span>
                  <span className="text-[#b6ab91]">{note.title}</span>
                </div>
-               <p className="text-[1.5rem] leading-relaxed">{note.content}</p>
+               <p className="text-[1.2rem] leading-relaxed">{note.content}</p>
              </div>
            );
          })}

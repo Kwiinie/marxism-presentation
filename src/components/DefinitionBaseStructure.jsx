@@ -4,11 +4,9 @@ import useInView from '../hooks/useInview';
 
 const DefinitionBaseStructure = () => {
    const items = [
-     'Quan hệ sản xuất',
      'Quan hệ sản xuất thống trị',
      'Quan hệ sản xuất tàn dư',
      'Quan hệ sản xuất mầm mống',
-     'Lực lượng sản xuất',
    ];
  
    const [ref, inView] = useInView( 0.5 );

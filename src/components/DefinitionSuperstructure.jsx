@@ -59,7 +59,7 @@ const DefinitionSuperstructure = () => {
    }, [inView]);
 
    return (
-      <div ref={ref} className="flex flex-col md:flex-row min-h-screen w-full bg-[#fdf5e6]">
+      <div ref={ref} className="flex flex-col md:flex-row min-h-screen w-full ">
          <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
 
 
@@ -79,17 +79,17 @@ const DefinitionSuperstructure = () => {
                ))}
             </h1>
 
-            <div className="mt-10">
+            <div className="mt-5">
                <motion.div
-                  className="mt-10"
+                  className="mt-5"
                   initial={{ opacity: 0, y: 40 }}
                   animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
                   transition={{ duration: 1, delay: 1 }} // Delay after heading words animation
                >
-                  <p className="text-2xl leading-snug" style={{ fontFamily: 'var(--font-secondary)' }}>
+                  <p className="text-xl leading-snug" style={{ fontFamily: 'var(--font-secondary)' }}>
                      Là toàn bộ quan điểm tư tưởng xã hội và thiết chế chính trị – xã hội: <br />
 
-                     <ul className="list-disc pl-6 text-2xl leading-relaxed">
+                     <ul className="list-disc pl-6 text-lg leading-relaxed">
                         <li>
                            <span className="relative" style={{ fontFamily: 'var(--font-secondary)' }}>
                               <span className="border-b-2 border-red-500 pb-0" style={{ fontFamily: 'var(--font-secondary)' }}>

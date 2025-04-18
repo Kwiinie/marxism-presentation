@@ -57,7 +57,7 @@ const DefinitionBaseTitle = () => {
                   style={{
                      position: 'absolute',
                      top: '15vh',     // move higher
-                     right: '70vh',   // move further right
+                     right: '75vh',   // move further right
                      width: '7vh',
                      zIndex: 10,
                   }}

@@ -74,7 +74,7 @@
 .hero-heading {
   text-transform: uppercase;
   max-width: 80vw;
-  font-size: 7em;
+  font-size: 5em;
   line-height: 130%;
 }
 .hero-heading .word.visible {
@@ -239,12 +239,7 @@
   z-index: 6; /* Higher than rest of definition section but lower than RelationshipSection */
 }
 
-.relationship-wrapper {
-  position: relative;
-  z-index: 15; /* Higher than DefinitionSuperstructure but lower than CQSection */
-  background-color: var(--background-color, #fff);
-  width: 100%;
-}
+
 
 .cq-section {
   position: relative;
@@ -254,45 +249,10 @@
   width: 100%;
 }
 
-/* Horizontal scroll section styling - matching DefinitionSection structure */
-.horizontal-section {
-  overflow: hidden;
-  width: 100%;
-  height: 100vh;
-}
-
-.horizontal-track {
-  display: flex;
-  height: 100vh;
-}
-
-.horizontal-content {
-  display: flex;
-  height: 100%;
-}
-
-/* Make sure all direct children of horizontal content maintain full height and width */
-.horizontal-content > * {
-  height: 100vh;
-  min-width: 100vw; /* Each section takes at least full viewport width */
-  flex-shrink: 0; /* Prevent components from shrinking */
-}
-
-/* Relationship section specific styles */
-.relationship-section {
-  width: 100%;
-  height: 100vh;
-}
-
-/* Fix for pinned sections */
-.gsap-pin-spacer {
-  width: 100% !important;
-  max-width: 100% !important;
-  display: block !important;
-}
 
 
 /*DEFINITION SECTION*/
+/* Base styles for horizontal scrolling section */
 .horizontal-section {
   position: relative;
   width: 100%;
@@ -306,21 +266,28 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 100%;
+  width: fit-content; /* Important: Allow content to determine width */
+  display: flex;
+  flex-wrap: nowrap;
+  will-change: transform; /* Performance optimization */
 }
 
 .horizontal-content {
   display: flex;
-  width: max-content;
+  flex-wrap: nowrap;
   height: 100vh;
 }
 
+/* Style for each section component */
 .horizontal-content > * {
-  width: 100vw;
+  flex-shrink: 0; /* Prevent content from shrinking */
+  width: 100vw; /* Each component takes one viewport width */
   height: 100vh;
-  flex: none;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
 
 .section-period {
   z-index: 4;
@@ -454,7 +421,7 @@ mark.m1790-2 {
 
 @media screen and (max-width: 1366px) {
   .mark.m1790.m1790-2 {
-    right: 50vh !important;
+    right: 70vh !important;
   }
   
   .section-main-heading.s1790.top {
