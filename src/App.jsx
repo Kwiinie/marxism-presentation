@@ -11,6 +11,7 @@ import preventZoom from './components/PreventZoom';
 import MeaningSection from './components/MeaningSection';
 import CQFullSection from './components/CQFullSection';
 import EndSection from './components/EndSection';
+import NegativeMouse from './components/NegativeMouse';
 
 
 function App() {
@@ -35,14 +36,17 @@ function App() {
 
 
   return (
-    <div className="app-container">
-    <HeroSection />
-    <DefinitionSection />
-    <RelationshipSection />
-    <MeaningSection />
-    <CQFullSection />
-    <EndSection />
-  </div>
+    <NegativeMouse>
+      <div className="app-container">
+        <HeroSection />
+        <DefinitionSection />
+        <RelationshipSection />
+        <MeaningSection />
+        <CQFullSection />
+        <EndSection />
+      </div>
+    </NegativeMouse>
+
   )
 }
 
