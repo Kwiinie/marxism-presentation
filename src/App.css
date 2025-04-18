@@ -451,3 +451,226 @@ mark.m1790-2 {
 .mark {
   position: absolute;
 }
+
+@media screen and (max-width: 1366px) {
+  .mark.m1790.m1790-2 {
+    right: 50vh !important;
+  }
+  
+  .section-main-heading.s1790.top {
+    font-size: 9vh;
+  }
+  
+  [style*="width: '50%'"] {
+    width: 60% !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .mark.m1790.m1790-2 {
+    right: 40vh !important;
+    top: 12vh !important;
+  }
+  
+  .mark.m1790.m1790-1 {
+    right: -6vh !important;
+    width: 8vh !important;
+  }
+  
+  .section-main-heading.s1790.top {
+    font-size: 8vh;
+  }
+  
+  [style*="width: '50%'"] {
+    width: 70% !important;
+  }
+  
+  [style*="fontSize: '1.25rem'"] {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mark.m1790.m1790-2 {
+    right: 30vh !important;
+    top: 10vh !important;
+    width: 6vh !important;
+  }
+  
+  .mark.m1790.m1790-1 {
+    right: -5vh !important;
+    top: -8vh !important;
+    width: 7vh !important;
+  }
+  
+  .section-main-heading.s1790.top {
+    font-size: 7vh;
+  }
+  
+  [style*="width: '50%'"] {
+    width: 80% !important;
+  }
+  
+  [style*="fontSize: '1.25rem'"] {
+    font-size: 1.1rem !important;
+  }
+  
+  [style*="padding: '0 2rem'"] {
+    padding: 0 1.5rem !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mark.m1790.m1790-2 {
+    right: 20vh !important;
+    top: 8vh !important;
+    width: 5vh !important;
+  }
+  
+  .mark.m1790.m1790-1 {
+    right: -4vh !important;
+    top: -6vh !important;
+    width: 6vh !important;
+  }
+  
+  .mark.m1790.m1790-3 {
+    width: 5vh !important;
+  }
+  
+  .section-main-heading.s1790.top {
+    font-size: 6vh;
+  }
+  
+  [style*="width: '50%'"] {
+    width: 90% !important;
+  }
+  
+  [style*="fontSize: '1.25rem'"] {
+    font-size: 1rem !important;
+  }
+  
+  [style*="padding: '0 2rem'"] {
+    padding: 0 1rem !important;
+  }
+  
+  [style*="maxHeight: showImage ? '600px'"] {
+    max-height: 400px !important;
+  }
+}
+
+.section-main-heading.s1790.top {
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1280px) {
+  .text-6xl {
+    font-size: 3.5rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.35rem;
+  }
+  
+  .p-12 {
+    padding: 2rem;
+  }
+  
+  .mb-16 {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .text-6xl {
+    font-size: 3rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Fix for mobile view (stacked layout) */
+  .min-h-screen {
+    min-height: auto;
+  }
+  
+  .md\:w-1/2 {
+    width: 100%;
+  }
+  
+  .text-6xl {
+    font-size: 2.5rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.125rem;
+  }
+  
+  .p-12 {
+    padding: 1.5rem;
+  }
+  
+  .mb-16 {
+    margin-bottom: 2rem;
+  }
+  
+
+}
+
+@media (max-width: 480px) {
+  .text-6xl {
+    font-size: 2rem;
+  }
+  
+  .text-2xl {
+    font-size: 1rem;
+  }
+  
+  .p-12 {
+    padding: 1rem;
+  }
+  
+  .leading-snug {
+    line-height: 1.4;
+  }
+  
+  .leading-relaxed {
+    line-height: 1.5;
+  }
+  
+  .list-disc.pl-6 {
+    padding-left: 1rem;
+  }
+}
+
+/* Fix for very small screens */
+@media (max-width: 320px) {
+  .text-6xl {
+    font-size: 1.75rem;
+  }
+
+}
+
+/* Fix for span margins to prevent word wrapping issues */
+@media (max-width: 768px) {
+  [style*="marginRight: '0.5rem'"] {
+    margin-right: 0.3rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  [style*="marginRight: '0.5rem'"] {
+    margin-right: 0.2rem !important;
+  }
+}
+
+/* Ensure proper stacking on mobile */
+@media (max-width: 768px) {
+  .flex-col.md\:flex-row {
+    flex-direction: column !important;
+  }
+}

@@ -71,67 +71,70 @@ const HeroSection = () => {
 
    return (
       <motion.section
-         className="hero px-4 sm:px-8 md:px-12 py-12"
-         initial="hidden"
-         animate="visible"
-         variants={containerVariants}
-      >
-         {/* TOP */}
-         <div className="hero-top-wrap flex justify-center mb-10">
-            <div className="hero-top-center text-center">
-               <h1 className="hero-heading font-black tracking-tight leading-tight text-2xl sm:text-4xl md:text-6xl lg:text-7xl">
-                  {[
-                     'BIỆN', 'CHỨNG', 'GIỮA', 'CƠ', 'SỞ', 'HẠ', 'TẦNG',
-                     'VÀ', 'KIẾN', 'TRÚC', 'THƯỢNG', 'TẦNG', 'CỦA', 'XÃ', 'HỘI'
-                  ].map((word, i) => (
-                     <span
-                        key={i}
-                        className={`inline-block word word-${i + 1} mx-[0.2rem]`}
-                     >
-                        {word}
-                     </span>
-                  ))}
-               </h1>
+      className="hero"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      <div className="hero-top-wrap">
+        <div className="hero-top-center">
+          <h1 className="hero-heading">
+            <span className="word word-1">BIỆN</span>{' '}
+            <span className="word word-2">CHỨNG</span>{' '}
+            <span className="word word-3">GIỮA</span>{' '}
+            <span className="word word-4">CƠ</span>{' '}
+            <span className="word word-5">SỞ</span>{' '}
+            <span className="word word-6">HẠ</span>{' '}
+            <span className="word word-7">TẦNG</span>{' '}
+            <span className="word word-8">VÀ</span>{' '}
+            <span className="word word-9">KIẾN</span>{' '}
+            <span className="word word-10">TRÚC</span>{' '}
+            <span className="word word-11">THƯỢNG</span>{' '}
+            <span className="word word-12">TẦNG</span>{' '}
+            <span className="word word-13">CỦA</span>{' '}
+            <span className="word word-14">XÃ</span>{' '}
+            <span className="word word-15">HỘI</span>{' '}
+          </h1>
+
+          {/* <div className="hero-top-text">
+            <span className='font-bold'>I. Học thuyết hình thái kinh tế-xã hội</span>
+            <br />
+            <span className="pt-2">3. Biện chứng giữa cơ sở hạ tầng</span> và kiến trúc thượng tầng của xã hội
+          </div> */}
+        </div>
+      </div>
+
+      <div className="hero-bottom-wrap">
+        {timelinePeriods.map((period) => (
+          <a
+            key={period.id}
+            data-lenis-restart=""
+            data-target={`#${period.targetId}`}
+            href="#"
+            className={period.className}
+            onClick={(e) => scrollToSection(period.targetId, e)}
+            style={{
+              transform: 'translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+              transformStyle: 'preserve-3d'
+            }}
+          >
+            <div className="hero-period-chapter">{period.chapter}</div>
+            <div className="hero-period-text upd">{period.period}</div>
+            <div className="hero-img-wrap">
+              {period.images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  loading="lazy"
+                  alt=""
+                  className={`hero-img ${index === 0 ? 'up' : ''}`}
+                />
+              ))}
             </div>
-         </div>
-
-         {/* BOTTOM */}
-         <div className="hero-bottom-wrap grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {timelinePeriods.map((period) => (
-               <a
-                  key={period.id}
-                  data-lenis-restart=""
-                  data-target={`#${period.targetId}`}
-                  href="#"
-                  className="group block bg-[#fdf5e6] border border-gray-300 rounded-lg overflow-hidden shadow-md transition-transform hover:scale-[1.02]"
-                  onClick={(e) => scrollToSection(period.targetId, e)}
-                  style={{
-                     transform: 'translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
-                     transformStyle: 'preserve-3d'
-                  }}
-               >
-                  <div className="hero-period-chapter px-4 pt-4 text-sm font-medium text-gray-500">
-                     {period.chapter}
-                  </div>
-                  <div className="hero-period-text upd px-4 text-xl font-bold mb-2 text-black">
-                     {period.period}
-                  </div>
-                  <div className="hero-img-wrap flex justify-center items-center gap-2 px-4 pb-4">
-                     {period.images.map((image, index) => (
-                        <img
-                           key={index}
-                           src={image}
-                           loading="lazy"
-                           alt=""
-                           className={`hero-img w-full h-auto max-w-[120px] object-cover ${index === 0 ? 'up' : ''}`}
-                        />
-                     ))}
-                  </div>
-               </a>
-            ))}
-         </div>
-      </motion.section>
-
+          </a>
+        ))}
+      </div>
+    </motion.section>
    );
 };
 

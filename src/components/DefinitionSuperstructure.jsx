@@ -60,9 +60,10 @@ const DefinitionSuperstructure = () => {
 
    return (
       <div ref={ref} className="flex flex-col md:flex-row min-h-screen w-full bg-[#fdf5e6]">
-         {/* Left content */}
-         <div className="w-full md:w-1/2 px-6 sm:px-10 md:px-12 py-12 flex flex-col justify-center">
-            <h1 className="section-main-heading s1790 top text-3xl sm:text-5xl lg:text-6xl font-black tracking-tighter mb-10 sm:mb-16">
+         <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
+
+
+            <h1 className="section-main-heading s1790 top text-6xl font-black tracking-tighter mb-16">
                {words.map((word, i) => (
                   <span
                      key={i}
@@ -78,26 +79,32 @@ const DefinitionSuperstructure = () => {
                ))}
             </h1>
 
-            <div className="mt-6 sm:mt-10">
+            <div className="mt-10">
                <motion.div
-                  className="mt-6 sm:mt-10"
+                  className="mt-10"
                   initial={{ opacity: 0, y: 40 }}
                   animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-                  transition={{ duration: 1, delay: 1 }}
+                  transition={{ duration: 1, delay: 1 }} // Delay after heading words animation
                >
-                  <p className="text-lg sm:text-xl md:text-2xl leading-relaxed" style={{ fontFamily: 'var(--font-secondary)' }}>
-                     Là toàn bộ quan điểm tư tưởng xã hội và thiết chế chính trị – xã hội:
-                     <ul className="list-disc pl-6 mt-4 space-y-4">
+                  <p className="text-2xl leading-snug" style={{ fontFamily: 'var(--font-secondary)' }}>
+                     Là toàn bộ quan điểm tư tưởng xã hội và thiết chế chính trị – xã hội: <br />
+
+                     <ul className="list-disc pl-6 text-2xl leading-relaxed">
                         <li>
-                           <span className="border-b-2 border-red-500 pb-0">
-                              Tư tưởng:
-                           </span>{' '}
+                           <span className="relative" style={{ fontFamily: 'var(--font-secondary)' }}>
+                              <span className="border-b-2 border-red-500 pb-0" style={{ fontFamily: 'var(--font-secondary)' }}>
+                                 Tư tưởng:
+                              </span>{' '}
+                           </span>
                            chính trị, pháp luật, đạo đức, tôn giáo, triết học, nghệ thuật…
                         </li>
-                        <li>
-                           <span className="border-b-2 border-red-500 pb-0">
-                              Thiết chế:
-                           </span>{' '}
+
+                        <li className="mt-4">
+                           <span className="relative" style={{ fontFamily: 'var(--font-secondary)' }}>
+                              <span className="border-b-2 border-red-500 pb-0" style={{ fontFamily: 'var(--font-secondary)' }}>
+                                 Thiết chế:
+                              </span>{' '}
+                           </span>
                            nhà nước, đảng, tòa án, trường học, nhà thờ…
                         </li>
                      </ul>
@@ -108,8 +115,8 @@ const DefinitionSuperstructure = () => {
             </div>
          </div>
 
-         {/* Right image */}
-         <div className="w-full md:w-1/2 h-[50vh] md:h-screen relative">
+         {/* Right side with single image */}
+         <div className="w-full md:w-1/2 h-screen relative">
             <img
                src="/superstructure.jpg"
                alt="superstructure"
@@ -117,7 +124,6 @@ const DefinitionSuperstructure = () => {
             />
          </div>
       </div>
-
    );
 };
 
