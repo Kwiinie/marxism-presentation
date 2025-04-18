@@ -1,0 +1,14 @@
+.hero-top-wrap {
+   flex-flow: row;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   max-width: 100%;
+   height: 50vh;
+   min-height: 31.25vw;
+   padding: 0 0 0 2.778vw;
+   display: flex
+;
+   overflow: hidden;
+}
+
