@@ -109,7 +109,7 @@ const DefinitionSuperstructure = () => {
                         </li>
                      </ul>
                      <br />
-                     cùng những quan hệ nội tại của thượng tầng hình thành nên một cơ sở hạ tầng nhất định.
+                     cùng những quan hệ nội tại của thượng tầng hình thành trên một cơ sở hạ tầng nhất định.
                   </p>
                </motion.div>
             </div>
